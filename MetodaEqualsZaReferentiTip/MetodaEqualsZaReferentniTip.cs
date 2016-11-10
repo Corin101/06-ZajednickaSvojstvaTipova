@@ -49,7 +49,10 @@ namespace Vsite.CSharp
         {
             return string.Format("'{0}, {1}'", m_ime, m_matičniBroj);
         }
-
+        public override int GetHashCode()
+        {
+            return m_ime.GetHashCode() ^ m_matičniBroj;
+        }
 
     }
 
