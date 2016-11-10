@@ -34,9 +34,16 @@ namespace Vsite.CSharp
             return Equals((Osoba)obj);
 
         }
-        // TODO: Pregaziti (override) metodu Equals(object) tako da poziva Equals(Osoba)
+        //  Pregaziti (override) metodu Equals(object) tako da poziva Equals(Osoba)
 
-
+        public static bool operator==(Osoba a, Osoba b)
+        {
+            return Osoba.Equals(a,b);
+        }
+        public static bool operator!=(Osoba a, Osoba b)
+        {
+            return !(a == b);
+        }
 
         public override string ToString()
         {
